@@ -242,3 +242,9 @@ Place the diagram image at `images/ci-cd-workflow.png` to display it above.
 ---
 
 If you want, I can add the image file into the repository for you — upload the diagram and I'll commit it into images/ci-cd-workflow.png.
+
+
+
+
+docker build -t devops-pracs 
+docker run --rm devops-pracs
