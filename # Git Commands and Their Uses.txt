@@ -1,0 +1,265 @@
+# Git Commands and Their Uses
+
+## 1. Git Setup Commands
+
+| Command                                            | Use                         |
+| -------------------------------------------------- | --------------------------- |
+| `git --version`                                    | Check installed Git version |
+| `git config --global user.name "Your Name"`        | Set Git username            |
+| `git config --global user.email "you@example.com"` | Set Git email               |
+| `git config --list`                                | View Git configuration      |
+
+---
+
+# 2. Repository Commands
+
+| Command                | Use                                     |
+| ---------------------- | --------------------------------------- |
+| `git init`             | Initialize a new Git repository         |
+| `git clone <repo-url>` | Copy remote repository to local machine |
+
+Example:
+
+```bash
+git clone https://github.com/user/project.git
+```
+
+---
+
+# 3. File Tracking Commands
+
+| Command          | Use                               |
+| ---------------- | --------------------------------- |
+| `git status`     | Check file status                 |
+| `git add <file>` | Add specific file to staging area |
+| `git add .`      | Add all files                     |
+| `git rm <file>`  | Remove file from Git              |
+| `git mv old new` | Rename/move file                  |
+
+---
+
+# 4. Commit Commands
+
+| Command                    | Use                        |
+| -------------------------- | -------------------------- |
+| `git commit -m "message"`  | Save changes with message  |
+| `git commit -am "message"` | Add tracked files + commit |
+| `git log`                  | Show commit history        |
+| `git log --oneline`        | Short commit history       |
+
+Example:
+
+```bash
+git commit -m "Added login feature"
+```
+
+---
+
+# 5. Branch Commands
+
+| Command                    | Use                     |
+| -------------------------- | ----------------------- |
+| `git branch`               | List branches           |
+| `git branch <branch-name>` | Create new branch       |
+| `git checkout <branch>`    | Switch branch           |
+| `git checkout -b <branch>` | Create + switch branch  |
+| `git switch <branch>`      | Switch branch (new way) |
+| `git merge <branch>`       | Merge branch            |
+| `git branch -d <branch>`   | Delete branch           |
+
+Example:
+
+```bash
+git checkout -b feature/login
+```
+
+---
+
+# 6. Remote Repository Commands
+
+| Command                       | Use                              |
+| ----------------------------- | -------------------------------- |
+| `git remote -v`               | Show remote repositories         |
+| `git remote add origin <url>` | Connect local repo to GitHub     |
+| `git push origin main`        | Upload code to GitHub            |
+| `git pull origin main`        | Download latest changes          |
+| `git fetch`                   | Get remote updates without merge |
+
+Example:
+
+```bash
+git remote add origin https://github.com/user/project.git
+```
+
+---
+
+# 7. Undo Commands
+
+| Command                  | Use                      |
+| ------------------------ | ------------------------ |
+| `git restore <file>`     | Undo file changes        |
+| `git reset HEAD <file>`  | Unstage file             |
+| `git reset --hard`       | Remove all local changes |
+| `git revert <commit-id>` | Undo commit safely       |
+| `git checkout -- <file>` | Restore old file version |
+
+---
+
+# 8. Stash Commands
+
+| Command           | Use                      |
+| ----------------- | ------------------------ |
+| `git stash`       | Temporarily save changes |
+| `git stash list`  | View stash list          |
+| `git stash apply` | Restore stash            |
+| `git stash drop`  | Delete stash             |
+
+---
+
+# 9. Difference & Inspection Commands
+
+| Command            | Use                        |
+| ------------------ | -------------------------- |
+| `git diff`         | Show changes               |
+| `git show`         | Show commit details        |
+| `git blame <file>` | Show who changed each line |
+
+---
+
+# 10. Tag Commands
+
+| Command                | Use                |
+| ---------------------- | ------------------ |
+| `git tag`              | List tags          |
+| `git tag v1.0`         | Create tag         |
+| `git push origin v1.0` | Push tag to GitHub |
+
+---
+
+# 11. Useful GitHub Workflow Commands
+
+## First Time Push
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <repo-url>
+git push -u origin main
+```
+
+---
+
+# 12. Daily Developer Workflow
+
+```bash
+git pull origin main
+git checkout -b feature-name
+
+# Make changes
+
+git add .
+git commit -m "Added new feature"
+git push origin feature-name
+```
+
+---
+
+# 13. Advanced Commands
+
+| Command                    | Use                                      |
+| -------------------------- | ---------------------------------------- |
+| `git rebase main`          | Reapply commits on top of another branch |
+| `git cherry-pick <commit>` | Copy commit from another branch          |
+| `git clean -f`             | Remove untracked files                   |
+| `git reflog`               | View all Git activity/history            |
+| `git bisect`               | Find buggy commit                        |
+
+---
+
+# 14. Most Important Commands for Interviews
+
+```bash
+git init
+git clone
+git status
+git add .
+git commit -m ""
+git push
+git pull
+git branch
+git checkout
+git merge
+git stash
+git rebase
+git reset
+git revert
+git fetch
+git log
+git diff
+```
+
+---
+
+# 15. Difference Between Important Commands
+
+| Command                         | Difference                                                |
+| ------------------------------- | --------------------------------------------------------- |
+| `git fetch` vs `git pull`       | Fetch only downloads, Pull downloads + merges             |
+| `git merge` vs `git rebase`     | Merge keeps history, Rebase creates linear history        |
+| `git reset` vs `git revert`     | Reset removes history locally, Revert creates undo commit |
+| `git add .` vs `git commit -am` | `add .` adds all files, `-am` only tracked files          |
+
+---
+
+# 16. Git Areas (Important Concept)
+
+```text
+Working Directory → Staging Area → Repository
+```
+
+* Working Directory = Current files
+* Staging Area = Prepared changes
+* Repository = Saved commits
+
+---
+
+# 17. Common Git Errors
+
+## Authentication Failed
+
+Use GitHub Personal Access Token instead of password.
+
+---
+
+## Merge Conflict
+
+Occurs when same lines edited in different branches.
+
+Resolve:
+
+```bash
+git add .
+git commit
+```
+
+---
+
+## Detached HEAD
+
+Fix:
+
+```bash
+git checkout main
+```
+
+---
+
+# 18. Useful Shortcuts
+
+| Shortcut             | Use                    |
+| -------------------- | ---------------------- |
+| `git checkout -`     | Switch previous branch |
+| `git commit --amend` | Edit last commit       |
+| `git log --graph`    | Visual branch history  |
