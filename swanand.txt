@@ -1,0 +1,24 @@
+hii how are you 
+
+
+first  folder 
+git init
+git add remote origin address of github ( to add folder to github)
+git add :-  it is to files added
+1.git add <filename>:- only add those files
+2.git add . :- all files
+git branch <branch_name>
+git push origin <branch_name>
+
+#branch 
+git branch :- list of branch
+git branch <branch_name>:- create new branch
+git checkout <branch_name>:- switch to Branch
+
+git status:- show status of files (if modified, commitetc  )
+
+#pull and fetch
+git pull <branch_name>:-all files 
+git fetch:- specific files 
+
+
