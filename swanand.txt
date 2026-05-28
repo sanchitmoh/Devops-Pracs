@@ -18,6 +18,7 @@ git checkout <branch_name>:- switch to Branch
 git status:- show status of files (if modified, commitetc  )
 
 #pull and fetch
-
+git pull <branch_name>:-all files 
+git fetch:- specific files 
 
 
