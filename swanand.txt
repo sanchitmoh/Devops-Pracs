@@ -25,4 +25,8 @@ git pull <branch_name>:-all files
 git fetch:- specific files 
 >>>>>>>>> Temporary merge branch 2
 
+git log :- to see the nlog
+git log --oneline"- show  log in one line
+
+
 
