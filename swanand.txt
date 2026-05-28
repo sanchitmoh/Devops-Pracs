@@ -18,7 +18,11 @@ git checkout <branch_name>:- switch to Branch
 git status:- show status of files (if modified, commitetc  )
 
 #pull and fetch
+<<<<<<<<< Temporary merge branch 1
+
+=========
 git pull <branch_name>:-all files 
 git fetch:- specific files 
+>>>>>>>>> Temporary merge branch 2
 
 
