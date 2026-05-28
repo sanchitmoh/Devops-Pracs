@@ -1,0 +1,396 @@
+# CI/CD Workflow Management Diagram Explanation
+
+This diagram explains how **CI/CD (Continuous Integration & Continuous Delivery)** works in software development.
+
+It is divided into 2 main parts:
+
+1. **Continuous Integration (CI)** → Build Pipeline
+2. **Continuous Delivery (CD)** → Release Pipeline
+
+---
+
+# 1. Developers
+
+👨‍💻 Developers write code for:
+
+* New features
+* Bug fixes
+* Improvements
+
+They work on different branches locally.
+
+Example:
+
+```bash id="k82ebw"
+git checkout -b feature-login
+```
+
+After coding, they push code to GitHub/GitLab.
+
+---
+
+# 2. Version Control (Combining Branch)
+
+📁 Version control systems:
+
+* GitHub
+* GitLab
+* Bitbucket
+
+Here:
+
+* Different developers’ code is merged
+* Pull Requests (PRs) are reviewed
+* Code is combined into a main branch
+
+Purpose:
+
+* Maintain code history
+* Collaboration
+* Avoid conflicts
+
+Example:
+
+```bash id="5ux6fx"
+git merge feature-login
+```
+
+This step starts the **CI pipeline automatically**.
+
+---
+
+# 3. Compile
+
+⚙️ The source code is converted into executable/buildable code.
+
+Examples:
+
+* Java → `.class`
+* TypeScript → JavaScript
+* React → Production bundle
+
+Tools:
+
+* Maven
+* Gradle
+* npm
+* webpack
+
+Example:
+
+```bash id="u44hxk"
+mvn compile
+```
+
+OR
+
+```bash id="jlwmg4"
+npm run build
+```
+
+Purpose:
+
+* Detect syntax errors early
+* Ensure code builds successfully
+
+---
+
+# 4. Build / Package Creation
+
+📦 Application artifacts are created.
+
+Examples:
+
+* JAR files
+* WAR files
+* Docker Images
+* APKs
+
+Example:
+
+```bash id="x6j0po"
+docker build -t myapp .
+```
+
+Purpose:
+
+* Prepare deployable application package
+
+---
+
+# 5. Auto Unit Testing
+
+🧪 Automated unit tests are executed.
+
+Checks:
+
+* Individual methods/functions
+* Business logic
+* APIs
+
+Frameworks:
+
+* JUnit
+* Mockito
+* Jest
+* PyTest
+
+Example:
+
+```bash id="l1kql5"
+mvn test
+```
+
+Purpose:
+
+* Catch bugs automatically
+* Ensure functionality works
+
+---
+
+# 6. Auto UI Testing
+
+🖥️ Frontend/UI tests run automatically.
+
+Tests:
+
+* Button clicks
+* Form validation
+* Navigation
+* UI behavior
+
+Tools:
+
+* Selenium
+* Cypress
+* Playwright
+
+Purpose:
+
+* Ensure UI works correctly
+
+Example:
+
+```bash id="bt74bc"
+npm run cypress
+```
+
+---
+
+# 7. Package with Instructions
+
+📦 The application is packaged with:
+
+* Configuration
+* Deployment scripts
+* Environment settings
+* Docker Compose/Kubernetes configs
+
+Examples:
+
+* Docker Image
+* Helm Charts
+* YAML configs
+
+Purpose:
+
+* Make deployment easy and repeatable
+
+---
+
+# Continuous Integration (CI)
+
+Everything above belongs to **CI**.
+
+## CI Goal:
+
+✔ Integrate code continuously
+✔ Detect bugs early
+✔ Automate testing/building
+✔ Maintain stable codebase
+
+Popular CI Tools:
+
+* Jenkins
+* GitHub Actions
+* GitLab CI/CD
+* CircleCI
+
+---
+
+# 8. Release Pipeline Starts
+
+Now the application moves to **Continuous Delivery/Deployment**.
+
+The built package is sent to:
+
+* QA team
+* Staging server
+* Pre-production environment
+
+---
+
+# 9. Testing in Release Pipeline
+
+🧪 More advanced testing happens here:
+
+Types:
+
+* Integration Testing
+* Performance Testing
+* Security Testing
+* Load Testing
+* User Acceptance Testing (UAT)
+
+Purpose:
+
+* Ensure app is production-ready
+
+---
+
+# 10. Deployment
+
+🚀 Application is deployed to:
+
+* Staging
+* Production
+* Cloud servers
+
+Deployment Methods:
+
+* Docker
+* Kubernetes
+* AWS
+* Azure
+* GCP
+
+Example:
+
+```bash id="ig9f9u"
+kubectl apply -f deployment.yaml
+```
+
+---
+
+# 11. Public / General Availability
+
+🌍 Final users can now access the application.
+
+Examples:
+
+* Website goes live
+* Mobile app released
+* APIs available publicly
+
+This is the final stage.
+
+---
+
+# Continuous Delivery (CD)
+
+Everything from release pipeline to deployment is called **CD**.
+
+## CD Goal:
+
+✔ Faster releases
+✔ Automated deployment
+✔ Reliable software delivery
+✔ Reduce manual work
+
+---
+
+# Full Flow Summary
+
+```text id="h4qv2g"
+Developer Writes Code
+        ↓
+Push to Git Repository
+        ↓
+Code Merge / Pull Request
+        ↓
+Compile & Build
+        ↓
+Unit Testing
+        ↓
+UI Testing
+        ↓
+Package Application
+        ↓
+Release Pipeline
+        ↓
+Advanced Testing
+        ↓
+Deployment
+        ↓
+Production/Public Access
+```
+
+---
+
+# Difference Between CI and CD
+
+| CI                     | CD                       |
+| ---------------------- | ------------------------ |
+| Continuous Integration | Continuous Delivery      |
+| Focus on Build & Test  | Focus on Deployment      |
+| Detect bugs early      | Deliver software quickly |
+| Developers use it      | DevOps teams use it      |
+| Code integration       | Release automation       |
+
+---
+
+# Real Industry Example
+
+Suppose you update your React + Spring Boot project:
+
+## Step-by-Step:
+
+1. Write code
+2. Push to GitHub
+3. GitHub Actions starts automatically
+4. Backend compiles
+5. React builds
+6. Tests run
+7. Docker image created
+8. Deploy to AWS/Kubernetes
+9. Website updated automatically
+
+This entire process is CI/CD.
+
+---
+
+# Important Interview Points
+
+## Why CI/CD?
+
+* Faster development
+* Fewer bugs
+* Automatic deployment
+* Better collaboration
+* Stable releases
+
+---
+
+# Common CI/CD Tools
+
+| Category        | Tools                   |
+| --------------- | ----------------------- |
+| Version Control | GitHub, GitLab          |
+| Build Tools     | Maven, Gradle           |
+| CI/CD           | Jenkins, GitHub Actions |
+| Testing         | JUnit, Selenium         |
+| Containers      | Docker                  |
+| Orchestration   | Kubernetes              |
+| Cloud           | AWS, Azure, GCP         |
+
+---
+
+# Easy One-Line Definition
+
+## CI
+
+> Automatically build and test code whenever developers push changes.
+
+## CD
+
+> Automatically deliver/deploy tested applications to servers or production.
