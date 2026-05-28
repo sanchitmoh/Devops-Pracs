@@ -27,6 +27,9 @@ git fetch:- specific files
 
 git log :- to see the nlog
 git log --oneline"- show  log in one line
-
+ 
+ # github use for the remote repo 
+ #gitlab use for the all cicd pipleine
+ 
 
 
