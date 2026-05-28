@@ -12,6 +12,12 @@ git push origin <branch_name>
 
 #branch 
 git branch :- list of branch
-git branch <branch_name>
+git branch <branch_name>:- create new branch
+git checkout <branch_name>:- switch to Branch
+
+git status:- show status of files (if modified, commitetc  )
+
+#pull and fetch
+
 
 
